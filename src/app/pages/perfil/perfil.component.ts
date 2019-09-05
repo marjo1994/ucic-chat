@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
+
 import { UserInterface } from '../../models/profile-interface';
 import { MessageInterface } from '../../models/message-interface';
-import { Message } from '@angular/compiler/src/i18n/i18n_ast';
+import { NgForm } from '@angular/forms'
+import { Location } from '@angular/common'
 
 @Component({
   selector: 'app-perfil',
@@ -35,9 +37,12 @@ export class PerfilComponent implements OnInit {
     .subscribe((messages : MessageInterface) => (this.messages = messages['data']))
   }
 
-  sendComment() {
+  sendComment( chatForm: NgForm) {
     this.auth.createComment(this.messages.body)
-    .subscribe(resp => console.log(resp))
+    .subscribe(resp => {
+      console.log(resp);
+      location.reload()
+    })
   }
   salir() {
     this.auth.logOut();

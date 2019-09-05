@@ -25,10 +25,10 @@
   </div>
   
   <div class="width-60">
-    <div>
-      <input class ="form-control" name="message" placeholder="Comparte tu experiencia aquí"/>
-      <button class="btn btn-outline-secondary margin-1">Enviar</button>
-    </div>
+    <form #formChat = "ngForm" (ngSubmit)="sendComment(formChat)">
+      <input class ="form-control" type="text" name="message" [(ngModel)]="this.messages.body" placeholder="Comparte tu experiencia aquí"/>
+      <button class="btn btn-outline-secondary margin-1" type="submit">Enviar</button>
+    </form>
     <section *ngFor="let message of messages">
       <span class="color-gris">{{message['info_user']['name']}}</span>
       <p class = "text-area-amarillo rounded">{{message['body']}}</p>

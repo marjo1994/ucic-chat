@@ -71,7 +71,7 @@ export class AuthService {
     const headers = new HttpHeaders({
       'Authorization': 'Bearer ' + this.readToken()
     });
-    return this.http.post(`${this.url}/set/comments`,body, { headers: headers })
+    return this.http.post(`${this.url}/set/comment`,{body}, { headers: headers })
   } 
   
 }
