@@ -1,3 +1,37 @@
+@import url('https://fonts.googleapis.com/css?family=Gayathri&display=swap');
+
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.size-logo {
+  width: 250px;
+  height: 150px;
+}
+
+.btn-gris {
+  background-color: #707263;
+  border-radius: 7px;
+  color: white;
+  padding: 2%;
+}
+
+.font-phrase {
+  font-family: 'Gayathri', sans-serif;
+}
+
+.margin-top-2 {
+  margin-top: 2%;
+}
+
+.no-decoration {
+  text-decoration: none;
+  color: white
+}
 .red-error {
     color: red;
     font-size: 10px;

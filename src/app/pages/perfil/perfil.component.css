@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Gayathri&display=swap');
+
+.flex-inline {
+    display: flex;
+    flex-direction: row;
+    padding: 1.5%;
+    justify-content: space-between
+}
+
+.center {
+    display: flex;
+    align-content: center;
+}
+.width-100 {
+    width: 100%;
+}
+
+.header-gris {
+    background-color: #8A8A7E;
+}
+
+.font-title {
+    color: white;
+    font-family: 'Gayathri', sans-serif;
+}
