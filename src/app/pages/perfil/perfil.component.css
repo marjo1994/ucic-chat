@@ -3,13 +3,13 @@
 .flex-inline {
     display: flex;
     flex-direction: row;
-    padding: 1.5%;
+    padding: 1%;
     justify-content: space-between
 }
 
 .center {
     display: flex;
-    align-content: center;
+    align-items: center;
 }
 .width-100 {
     width: 100%;
@@ -22,4 +22,40 @@
 .font-title {
     color: white;
     font-family: 'Gayathri', sans-serif;
+}
+
+.details-profile {
+    background-color: rgba(243,199,21,0.7);
+    font-size: 14px;
+    color: #090700;
+    text-align: center;
+    padding: 1%
+}
+
+.field-profile {
+    font-weight: 700;
+    font-size: 16px;
+    color: #7C796E
+}
+
+.width-30{
+    width: 30%;
+}
+
+.width-60{
+    width: 60%;
+}
+
+.color-gris {
+    color: #8A8A7E;
+    font-weight: 600;
+}
+
+.text-area-amarillo {
+    background-color: rgba(243,199,21,0.9);
+    color: white;
+}
+
+.margin-1 {
+    margin-top: 1%;
 }

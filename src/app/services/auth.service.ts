@@ -12,8 +12,9 @@ export class AuthService {
 
   userToken: string;
 
+
   constructor( private http: HttpClient ) {
-    this.leerToken();
+    this.readToken();
    }
 
   logOut() {
@@ -30,19 +31,19 @@ export class AuthService {
       , authData
     ).pipe(
       map( resp => {
-        this.guardarToken(resp['data']['token'])
+        this.saveToken(resp['data']['token'])
         return resp 
       }
              
     ))
   }
 
-  private guardarToken( token: string) {
+  private saveToken( token: string) {
     this.userToken = token;
     localStorage.setItem('token', token)
   }
 
-  leerToken() {
+  readToken() {
     if(localStorage.getItem('token')) {
       this.userToken = localStorage.getItem('token');
     } else{
@@ -52,14 +53,25 @@ export class AuthService {
      return this.userToken;
   }
 
+   getUserActive() {
+    const headers = new HttpHeaders({
+      'Authorization': 'Bearer ' + this.readToken()
+    });
+    return this.http.get(`${this.url}/get/user`, { headers: headers })     
+   }
+
   getAllComments() {
     const headers = new HttpHeaders({
-      'Authorization': 'Bearer ' + this.userToken
+      'Authorization': 'Bearer ' + this.readToken()
     });
-    return this.http.get(`${this.url}/comments`, { headers: headers })
-      .pipe(
-        map(resp => {
-          return resp})
-      )
+    return this.http.get(`${this.url}/get/comments`, { headers: headers })
   }
+
+  createComment(body: string) {
+    const headers = new HttpHeaders({
+      'Authorization': 'Bearer ' + this.readToken()
+    });
+    return this.http.post(`${this.url}/set/comments`,body, { headers: headers })
+  } 
+  
 }

@@ -1,11 +1,37 @@
 <div class="flex-inline width-100 header-gris">
   <div class="center" >
-  <h1 class="font-title">Chat UCIC</h1>
-  </div> 
-  <button
-  class="btn btn-warning" 
-  (click) = "salir()"
-  >
-  Cerrar Sesión
-  </button>
+    <h1 class="font-title">Chat UCIC</h1>
+  </div>
+     <button
+    class="btn btn-warning" 
+    (click) = "salir()"
+    >
+    Cerrar Sesión
+    </button>
+  
 </div>
+
+<section class="flex-inline">
+  
+  <div class="width-30 details-profile">
+      <div>
+        <span class="field-profile">Nombre</span>
+        <p > {{profile['data']['name']}}</p>
+        <span class="field-profile">Apellido</span>
+        <p> {{profile['data']['lastname']}}</p>
+        <span class="field-profile">Correo</span>
+        <p >{{profile['data']['email']}}</p>
+      </div>
+  </div>
+  
+  <div class="width-60">
+    <div>
+      <input class ="form-control" name="message" placeholder="Comparte tu experiencia aquí"/>
+      <button class="btn btn-outline-secondary margin-1">Enviar</button>
+    </div>
+    <section *ngFor="let message of messages">
+      <span class="color-gris">{{message['info_user']['name']}}</span>
+      <p class = "text-area-amarillo rounded">{{message['body']}}</p>
+    </section>
+  </div>
+</section>
