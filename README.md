@@ -1,5 +1,7 @@
 ## Reto UCIC
 
+![Logo](/src/assets/images/ucic-logo.png)
+
 Proyecto desarrollado en **Angular 8**.
 
 Aplicación Web diseñada para que 
